@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pricing | PC Repair, Web Design, Business IT &amp; AI | Lakewolf Tech, Sheffield Lake OH</title>
+<meta name="description" content="Straightforward pricing for PC repair, home tech support, web design, small business IT, and practical AI in Sheffield Lake and Lorain County, Ohio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#0B0D0F"/><rect x="30" y="30" width="40" height="40" fill="#A62C37" transform="rotate(45 50 50)"/></svg></template>
+<style>
+  :root{--black:#0B0D0F;--graphite:#15191D;--graphite2:#1B2126;--steel:#B6BFC1;--steel-dim:#7C878A;--red:#A62C37;--red-bright:#C8414C;--ice:#F4F6F7;}
+  *{box-sizing:border-box;} html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--black);font-family:'IBM Plex Sans',sans-serif;color:var(--ice);-webkit-font-smoothing:antialiased;}
+  h1,h2,h3{font-family:'Archivo',sans-serif;margin:0;} p{margin:0;} ul{margin:0;padding:0;list-style:none;}
+  a{color:var(--ice);text-decoration:none;} a:hover{color:var(--red-bright);} button{font-family:inherit;cursor:pointer;}
+  ::selection{background:var(--red);color:var(--ice);}
+  #catnav::-webkit-scrollbar{display:none;}
+  @media (max-width:640px){ .hide-m{display:none!important;} }
+  @media (prefers-reduced-motion: reduce){ *{transition:none!important;} html{scroll-behavior:auto;} }
+</style>
+</helmet>
+
+<div style="background:var(--black);min-height:100vh;overflow-x:hidden;">
+  <header style="position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px clamp(16px,4vw,56px);background:rgba(11,13,15,0.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(182,191,193,0.12);">
+    <a href="index.dc.html" style="display:flex;align-items:center;gap:12px;">
+      <div style="width:16px;height:16px;background:var(--red);transform:rotate(45deg);"></div>
+      <span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:16px;letter-spacing:0.08em;">LAKEWOLF&nbsp;TECH</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:24px;">
+      <a class="hide-m" href="index.dc.html" style="font-size:14px;color:var(--steel);">Home</a>
+      <a href="contact.dc.html" style="font-size:13px;font-weight:600;color:var(--black);background:var(--red);padding:12px 20px;border-radius:2px;">Get Tech Help</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section style="position:relative;padding:150px clamp(20px,6vw,80px) 70px;overflow:hidden;background:var(--graphite);">
+    <div style="position:absolute;inset:0;background-image:url('assets/hero-poster.png');background-size:cover;background-position:75% 40%;opacity:0.28;"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(100deg, rgba(11,13,15,0.97) 0%, rgba(11,13,15,0.85) 45%, rgba(11,13,15,0.3) 100%);"></div>
+    <div style="position:absolute;left:0;bottom:0;height:2px;width:100%;background:linear-gradient(90deg,var(--red),transparent 70%);"></div>
+    <div style="position:relative;z-index:1;max-width:760px;">
+      <div style="font-size:13px;font-weight:600;letter-spacing:0.18em;color:var(--red-bright);margin-bottom:18px;">PRICING</div>
+      <h1 style="font-size:clamp(36px,6vw,72px);font-weight:900;line-height:1;margin-bottom:22px;">Straightforward Pricing. No Guesswork.</h1>
+      <p style="font-size:17px;color:var(--steel);max-width:600px;line-height:1.55;margin-bottom:12px;">Clear starting prices for common services. If your project falls outside the examples below, Lakewolf Tech will quote it before work begins.</p>
+      <p style="font-size:14px;color:var(--steel-dim);">No surprise charges. Work beyond an approved quote requires customer approval.</p>
+    </div>
+  </section>
+
+  <!-- CATEGORY NAV -->
+  <nav aria-label="Pricing categories" style="position:sticky;top:61px;z-index:90;background:rgba(11,13,15,0.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(182,191,193,0.12);">
+    <div id="catnav" style="display:flex;gap:8px;overflow-x:auto;padding:12px clamp(16px,4vw,56px);scrollbar-width:none;">
+      <sc-for list="{{ sections }}" as="s" hint-placeholder-count="8">
+        <a href="{{ s.href }}" onClick="{{ s.jump }}" style="flex:none;font-size:13px;font-weight:500;color:var(--steel);border:1px solid rgba(182,191,193,0.2);border-radius:20px;padding:11px 16px;white-space:nowrap;" style-hover="border-color:var(--red-bright);color:var(--ice);">{{ s.short }}</a>
+      </sc-for>
+      <a href="#policies" onClick="{{ jumpPolicies }}" style="flex:none;font-size:13px;font-weight:500;color:var(--steel);border:1px solid rgba(182,191,193,0.2);border-radius:20px;padding:11px 16px;white-space:nowrap;" style-hover="border-color:var(--red-bright);color:var(--ice);">Policies</a>
+    </div>
+  </nav>
+
+  <!-- SECTIONS -->
+  <main style="max-width:1240px;margin:0 auto;padding:40px clamp(16px,5vw,64px) 40px;display:flex;flex-direction:column;gap:20px;">
+    <sc-for list="{{ sections }}" as="s" hint-placeholder-count="8">
+      <section id="{{ s.id }}" style="scroll-margin-top:140px;background:var(--graphite);border:1px solid rgba(182,191,193,0.12);border-radius:6px;overflow:hidden;">
+        <button onClick="{{ s.toggle }}" aria-expanded="{{ s.isOpen }}" style="width:100%;display:flex;align-items:center;gap:clamp(12px,2.4vw,28px);text-align:left;background:transparent;border:none;color:var(--ice);padding:clamp(18px,3vw,30px);min-height:64px;">
+          <span style="font-family:'Archivo',sans-serif;font-size:14px;font-weight:700;color:var(--red-bright);flex:none;">{{ s.num }}</span>
+          <span style="flex:1;min-width:0;">
+            <span style="display:block;font-family:'Archivo',sans-serif;font-size:clamp(20px,2.8vw,32px);font-weight:800;line-height:1.1;">{{ s.title }}</span>
+            <span style="display:block;font-size:14px;color:var(--steel);margin-top:6px;line-height:1.45;">{{ s.intro }}</span>
+          </span>
+          <span style="{{ s.chevStyle }}">+</span>
+        </button>
+        <div style="{{ s.bodyStyle }}">
+          <div style="overflow:hidden;">
+            <div style="padding:0 clamp(18px,3vw,30px) clamp(22px,3vw,34px);border-top:1px solid rgba(182,191,193,0.1);padding-top:26px;">
+
+              <sc-for list="{{ s.plans }}" as="plan" hint-placeholder-count="0">
+                <!-- placeholder anchor to keep per-plan grid below -->
+              </sc-for>
+
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px;margin-bottom:24px;">
+                <sc-for list="{{ s.plans }}" as="plan" hint-placeholder-count="0">
+                  <div style="{{ plan.cardStyle }}">
+                    <div style="font-family:'Archivo',sans-serif;font-size:13px;font-weight:800;letter-spacing:0.1em;color:var(--red-bright);margin-bottom:14px;">{{ plan.name }}</div>
+                    <div style="display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 8px;margin-bottom:6px;">
+                      <span style="font-size:13px;color:var(--steel-dim);">{{ plan.pre }}</span>
+                      <span style="font-family:'Archivo',sans-serif;font-size:clamp(32px,4vw,44px);font-weight:900;line-height:1;">{{ plan.main }}</span>
+                      <span style="font-size:14px;color:var(--steel);">{{ plan.post }}</span>
+                    </div>
+                    <p style="font-size:14px;color:var(--steel);line-height:1.5;margin:10px 0 14px;">{{ plan.desc }}</p>
+                    <ul style="display:flex;flex-direction:column;gap:9px;">
+                      <sc-for list="{{ plan.bullets }}" as="b" hint-placeholder-count="0">
+                        <li style="display:flex;gap:10px;font-size:14px;color:var(--ice);line-height:1.4;">
+                          <span style="color:var(--red-bright);flex:none;">—</span><span>{{ b }}</span>
+                        </li>
+                      </sc-for>
+                    </ul>
+                  </div>
+                </sc-for>
+              </div>
+
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:0 40px;">
+                <sc-for list="{{ s.rows }}" as="r" hint-placeholder-count="0">
+                  <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid rgba(182,191,193,0.1);">
+                    <div style="min-width:0;">
+                      <div style="font-size:15px;font-weight:500;line-height:1.35;">{{ r.name }}</div>
+                      <div style="font-size:12px;color:var(--steel-dim);margin-top:2px;">{{ r.note }}</div>
+                    </div>
+                    <div style="text-align:right;flex:none;max-width:48%;">
+                      <span style="font-size:11px;letter-spacing:0.05em;color:var(--steel-dim);display:block;">{{ r.pre }}</span>
+                      <span style="font-family:'Archivo',sans-serif;font-size:19px;font-weight:800;color:var(--ice);">{{ r.main }}</span>
+                      <span style="font-size:12px;color:var(--steel);"> {{ r.post }}</span>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+
+              <sc-for list="{{ s.notes }}" as="n" hint-placeholder-count="0">
+                <p style="font-size:13px;color:var(--steel);line-height:1.55;margin-top:16px;padding-left:14px;border-left:2px solid var(--red);max-width:760px;">{{ n }}</p>
+              </sc-for>
+
+              <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:26px;">
+                <sc-for list="{{ s.ctas }}" as="c" hint-placeholder-count="1">
+                  <a href="{{ c.href }}" style="font-size:14px;font-weight:600;color:var(--black);background:var(--red);padding:15px 26px;border-radius:2px;" style-hover="background:var(--red-bright);">{{ c.label }}</a>
+                </sc-for>
+                <sc-for list="{{ s.links }}" as="l" hint-placeholder-count="0">
+                  <a href="{{ l.href }}" style="font-size:14px;font-weight:600;color:var(--ice);border:1px solid rgba(244,246,247,0.3);padding:15px 26px;border-radius:2px;" style-hover="border-color:var(--ice);">{{ l.label }}</a>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </sc-for>
+  </main>
+
+  <!-- POLICIES -->
+  <section id="policies" style="scroll-margin-top:140px;max-width:1240px;margin:0 auto;padding:40px clamp(16px,5vw,64px) 80px;">
+    <div style="font-size:13px;font-weight:600;letter-spacing:0.18em;color:var(--red-bright);margin-bottom:14px;">09 — PAYMENT &amp; PROJECT POLICIES</div>
+    <h2 style="font-size:clamp(26px,3.6vw,42px);font-weight:800;margin-bottom:32px;">How the work and the money move.</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:1px;background:rgba(182,191,193,0.12);border:1px solid rgba(182,191,193,0.12);border-radius:6px;overflow:hidden;">
+      <sc-for list="{{ policies }}" as="p" hint-placeholder-count="10">
+        <div style="background:var(--black);padding:24px;">
+          <h3 style="font-size:15px;font-weight:700;margin-bottom:8px;">{{ p.title }}</h3>
+          <p style="font-size:14px;color:var(--steel);line-height:1.55;">{{ p.copy }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section style="position:relative;padding:100px clamp(20px,6vw,80px);background:var(--graphite);overflow:hidden;text-align:center;">
+    <div style="position:absolute;inset:0;background-image:url('assets/hero-poster.png');background-size:cover;background-position:70% 50%;opacity:0.18;"></div>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center, rgba(11,13,15,0.6), rgba(11,13,15,0.95));"></div>
+    <div style="position:relative;z-index:1;max-width:680px;margin:0 auto;">
+      <h2 style="font-size:clamp(30px,4.4vw,52px);font-weight:900;line-height:1.1;margin-bottom:18px;">Not Sure Which Service You Need?</h2>
+      <p style="font-size:16px;color:var(--steel);margin-bottom:32px;">Tell Lakewolf Tech what's going on. You don't need to diagnose the problem yourself.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <a href="contact.dc.html" style="font-size:15px;font-weight:600;color:var(--black);background:var(--red);padding:16px 30px;border-radius:2px;" style-hover="background:var(--red-bright);">Get Tech Help</a>
+        <a href="contact.dc.html" style="font-size:15px;font-weight:600;color:var(--ice);border:1px solid rgba(244,246,247,0.4);padding:16px 30px;border-radius:2px;" style-hover="border-color:var(--ice);">Request a Quote</a>
+      </div>
+      <div style="margin-top:28px;display:flex;gap:24px;justify-content:center;flex-wrap:wrap;font-size:14px;">
+        <a href="tel:+12168350159" style="color:var(--steel);">(216) 835-0159</a>
+        <a href="mailto:lakewolftech@gmail.com" style="color:var(--steel);">lakewolftech@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="border-top:1px solid rgba(182,191,193,0.12);padding:32px clamp(20px,6vw,80px);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+    <span style="font-size:12px;color:var(--steel-dim);">© 2026 Lakewolf Tech. Sheffield Lake, Ohio.</span>
+    <a href="index.dc.html" style="font-size:12px;color:var(--steel-dim);">← Home</a>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { open: null };
+
+  data() {
+    const parse = (s) => {
+      const m = /^(Starting at )?(\$[\d,\.]+)(.*)$/.exec(s);
+      if (!m) return { pre: '', main: s, post: '' };
+      return { pre: m[1] ? 'Starting at' : '', main: m[2], post: m[3].trim() };
+    };
+    const row = ([name, price, note]) => ({ name, note: note || '', ...parse(price) });
+    const plan = (name, price, desc, bullets, feature) => ({
+      name, desc, bullets, ...parse(price),
+      cardStyle: feature
+        ? { background: 'linear-gradient(160deg,#1F262B,#0B0D0F)', border: '1px solid rgba(166,44,55,0.5)', borderRadius: '4px', padding: '26px 24px' }
+        : { background: 'var(--black)', border: '1px solid rgba(182,191,193,0.14)', borderRadius: '4px', padding: '26px 24px' },
+    });
+    return [
+      { id: 'pc-repair', num: '01', short: 'PC Repair', title: 'PC Repair & Upgrades', intro: 'Diagnostics, cleanups, installs, upgrades, and builds.',
+        rows: [
+          ['Computer Diagnostic', '$25', 'Waived when the recommended repair is completed'],
+          ['Diagnostic with Completed Repair', 'FREE'],
+          ['PC Rescue / Slow Computer Tune-Up', '$79'],
+          ['Virus & Malware Removal', '$99'],
+          ['Windows Clean Installation', '$99'],
+          ['Windows Reinstall + Preserve User Data', '$149'],
+          ['New Computer Setup', '$79'],
+          ['New Computer Setup + Data Transfer', '$129'],
+          ['Basic Data Transfer', '$79'],
+          ['Large / Complex Data Migration', 'Starting at $99'],
+          ['RAM Installation', '$39 + parts'],
+          ['SSD Installation', '$49 + parts'],
+          ['SSD Installation + Windows Migration', '$89 + parts'],
+          ['GPU Installation', '$49 + parts'],
+          ['Power Supply Installation', '$69 + parts'],
+          ['Desktop Internal Cleaning', '$59'],
+          ['Desktop Cleaning + Thermal Paste', '$79'],
+          ['Laptop Internal Cleaning + Thermal Paste', '$99'],
+          ['Laptop Battery Replacement', '$59 + parts'],
+          ['Laptop Screen Replacement', '$99 + parts'],
+          ['Logical Data Recovery', 'Starting at $129'],
+          ['Custom Gaming PC Assembly', '$149'],
+          ['Custom PC Assembly + Windows / Setup', '$199'],
+          ['General Repair Not Otherwise Listed', '$69/hr'],
+        ].map(row),
+        notes: ['Parts are additional unless specifically stated. Customers may provide compatible parts or Lakewolf Tech can source them after payment.'],
+        ctas: ['Get Tech Help'], links: [{ label: 'Explore PC Repair', href: 'pc-repair.dc.html' }, { label: 'See PC Rescue', href: 'pc-rescue.dc.html' }] },
+      { id: 'home-tech', num: '02', short: 'Home Tech', title: 'Home Tech Support', intro: 'Help at your house, or remotely from your couch.',
+        rows: [
+          ['In-Home Tech Support', '$69/hr'],
+          ['Additional Time', '$17.25 per 15 minutes'],
+          ['Remote Tech Support', '$59/hr'],
+          ['Wi-Fi / Router Setup', 'Starting at $99'],
+          ['Printer Setup / Troubleshooting', 'Starting at $59'],
+          ['Smart Device / Peripheral Setup', 'Starting at $59'],
+          ['Home Network Troubleshooting', 'Starting at $79'],
+        ].map(row),
+        notes: ['One-hour minimum for onsite support.', 'Local Sheffield Lake service may be available without an additional travel charge. Travel fees may apply outside the immediate service area.'],
+        ctas: ['Get Tech Help'] },
+      { id: 'web-design', num: '03', short: 'Web Design', title: 'Web Design', intro: 'Four packages, plus ecommerce. Built by the same person who built this site.',
+        plans: [
+          plan('LAKEWOLF LAUNCH', '$599', '', ['Up to 3 pages', 'Responsive design', 'Contact form', 'Basic SEO setup', 'Google Maps integration', 'Analytics', 'Domain connection', 'Basic performance optimization', '1 revision round']),
+          plan('LAKEWOLF BUSINESS', '$999', '', ['Up to 5 pages', 'Custom design', 'Responsive / mobile design', 'Contact and lead forms', 'Basic local SEO', 'Google Maps', 'Analytics', 'Social links', 'Performance optimization', '2 revision rounds']),
+          plan('LAKEWOLF PRO', 'Starting at $1,499', '', ['Up to 8 pages', 'Higher-end custom design', 'Advanced interactions and animation', 'Stronger SEO structure', 'Lead-generation forms', 'Analytics', 'Basic copy assistance', 'Performance optimization', '3 revision rounds'], true),
+          plan('ADVANCED / CUSTOM DEVELOPMENT', 'Starting at $2,500', 'For work that goes beyond a brochure site.', ['Booking systems', 'Advanced forms', 'API integrations', 'Customer portals', 'Databases', 'Custom functionality', 'Advanced animation', 'Complex business requirements']),
+          plan('ECOMMERCE WEBSITE', 'Starting at $1,999', 'Final pricing depends on:', ['Product count', 'Payment setup', 'Inventory requirements', 'Shipping rules', 'Integrations', 'Custom functionality']),
+        ],
+        notes: ['Domains, hosting, and paid plugins are billed separately unless specifically included in writing.'],
+        ctas: ['Request a Website Quote'], links: [{ label: 'See Web Design', href: 'web-design.dc.html' }] },
+      { id: 'web-addons', num: '04', short: 'Add-Ons', title: 'Website Add-Ons', intro: 'Bolt on what you need, skip what you don\u2019t.',
+        rows: [
+          ['Additional Standard Page', '$99'],
+          ['Additional Complex Page', 'Starting at $149'],
+          ['Blog Setup', '$149'],
+          ['Appointment / Booking Integration', 'Starting at $149'],
+          ['Online Payment Integration', 'Starting at $199'],
+          ['Basic Website Copywriting', '$49/page'],
+          ['Advanced Custom Animation', 'Starting at $149'],
+          ['Additional Revision Round', '$99'],
+          ['Website Migration', 'Starting at $199'],
+          ['Existing Website Refresh', 'Starting at $399'],
+        ].map(row),
+        ctas: ['Request a Website Quote'] },
+      { id: 'web-care', num: '05', short: 'Maintenance', title: 'Website Maintenance', intro: 'Keep your site updated, backed up, and watched.',
+        plans: [
+          plan('LAKEWOLF CARE', '$49/month', '', ['Update management', 'Backups', 'Uptime monitoring', 'Basic security monitoring', 'Up to 30 minutes of minor changes per month']),
+          plan('LAKEWOLF CARE+', '$99/month', '', ['Everything in Lakewolf Care', 'Up to 90 minutes of minor changes per month', 'Priority support', 'Performance checks', 'Analytics review'], true),
+        ],
+        rows: [['Additional Website Work', '$69/hr']].map(row),
+        notes: ['Unused included edit time does not roll over.'],
+        ctas: ['Ask About Website Care'] },
+      { id: 'business-it', num: '06', short: 'Business IT', title: 'Small Business IT', intro: 'Somebody who answers the phone.',
+        rows: [
+          ['Remote Business IT Support', '$99/hr'],
+          ['On-Site Business IT Support', '$119/hr'],
+          ['Business Technology Consultation', '$99/hr'],
+          ['New Workstation Setup', '$129'],
+          ['New Employee PC / Email Setup', '$149'],
+          ['Microsoft 365 Setup', 'Starting at $99'],
+          ['Business Email Migration', 'Starting at $199'],
+          ['Printer / Network Troubleshooting', 'Starting at $99'],
+          ['Business Router / Wi-Fi Setup', 'Starting at $149'],
+          ['Small Office Network Setup', 'Starting at $299'],
+          ['Backup Configuration', 'Starting at $149'],
+          ['Multi-PC Deployment', 'Custom Quote'],
+        ].map(row),
+        notes: ['Onsite support has a one-hour minimum.'],
+        ctas: ['Talk About Business IT'], links: [{ label: 'See Business IT', href: 'small-business-it.dc.html' }] },
+      { id: 'business-care', num: '07', short: 'Monthly Support', title: 'Monthly Business Support', intro: 'Ongoing coverage so small problems stay small.',
+        plans: [
+          plan('LAKEWOLF BUSINESS CARE', '$99/month', 'For very small businesses with roughly 1 to 3 computers.', ['Priority remote support', 'Basic PC health monitoring', 'Update oversight', 'Monthly system check', 'Discounted onsite support available']),
+          plan('BUSINESS CARE+', '$199/month', 'For businesses that need more regular support.', ['Priority support', 'More frequent assistance', 'Expanded monitoring / maintenance', 'Reduced onsite support pricing'], true),
+        ],
+        ctas: ['Ask About Business Care'] },
+      { id: 'ai', num: '08', short: 'AI Solutions', title: 'AI Solutions \u2014 Practical AI That Saves Time.', intro: 'Useful, business-sized AI. No hype.',
+        plans: [
+          plan('AI JUMPSTART', '$199', '90-minute consultation.', ['Workflow discussion', 'Identify useful AI opportunities', 'Recommended tools', 'Privacy / security considerations', 'Simple implementation plan']),
+          plan('AI PRODUCTIVITY SETUP', '$349', 'Examples of what\u2019s set up:', ['ChatGPT or Claude workspace configuration', 'Reusable business prompt library', 'Email workflows', 'Document workflows', 'Content workflows', 'Basic staff orientation']),
+          plan('WEBSITE AI ASSISTANT', 'Starting at $399', 'FAQ, lead-capture, or customer-assistance chatbot built around approved business information.', ['Ongoing AI, API, or platform fees are not included']),
+          plan('AI DOCUMENT ASSISTANT', 'Starting at $599', 'An assistant that answers from your own material.', ['Company documents', 'Manuals', 'Procedures', 'FAQs', 'Product information', 'Internal knowledge']),
+          plan('AI WORKFLOW AUTOMATION', 'Starting at $499', 'Example: website inquiry \u2192 AI summarizes lead \u2192 logs information \u2192 drafts response \u2192 notifies owner.', []),
+          plan('ADVANCED AI AUTOMATION', 'Starting at $1,500', '', ['Multiple connected systems', 'API integrations', 'AI agents', 'CRM workflows', 'Document processing', 'Custom logic', 'Automated reporting'], true),
+        ],
+        rows: [['AI Consulting / Custom Work', '$119/hr'], ['AI Discovery Call', 'Free 20-minute consultation']].map(row),
+        notes: ['Ongoing AI, API, or platform fees are not included unless specifically stated.'],
+        ctas: ['Explore AI Solutions'] },
+    ];
+  }
+
+  componentDidMount() {
+    const ids = this.data().map(s => s.id);
+    const o = {};
+    const mobile = window.innerWidth < 700;
+    ids.forEach((id, i) => { o[id] = mobile ? i === 0 : true; });
+    const h = (window.location.hash || '').slice(1);
+    if (ids.includes(h)) o[h] = true;
+    this.setState({ open: o }, () => { if (ids.includes(h)) this.openAndScroll(h); });
+  }
+
+  openAndScroll(id) {
+    this.setState(s => ({ open: { ...(s.open || {}), [id]: true } }), () => {
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 130, behavior: 'smooth' });
+      }, 60);
+    });
+  }
+
+  renderVals() {
+    const open = this.state.open || {};
+    const sections = this.data().map(s => {
+      const isOpen = open[s.id] !== false && (this.state.open ? !!open[s.id] : true);
+      return {
+        ...s,
+        plans: s.plans || [], rows: s.rows || [], notes: s.notes || [], links: s.links || [],
+        ctas: (s.ctas || []).map(label => ({ label, href: 'contact.dc.html?topic=' + encodeURIComponent(({ 'pc-repair': 'PC repair', 'home-tech': 'Home tech', 'web-design': 'Web design', 'web-addons': 'Web design', 'web-care': 'Website Care', 'business-it': 'Small business', 'business-care': 'Business Care', 'ai': 'AI' })[s.id] || '') })),
+        href: '#' + s.id,
+        isOpen: isOpen ? 'true' : 'false',
+        jump: (e) => { e.preventDefault(); this.openAndScroll(s.id); },
+        toggle: () => this.setState(st => ({ open: { ...(st.open || {}), [s.id]: !isOpen } })),
+        bodyStyle: { display: 'grid', gridTemplateRows: isOpen ? '1fr' : '0fr', transition: 'grid-template-rows 0.45s cubic-bezier(.16,1,.3,1)' },
+        chevStyle: { flex: 'none', width: '40px', height: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(182,191,193,0.3)', borderRadius: '50%', fontSize: '22px', color: isOpen ? 'var(--red-bright)' : 'var(--steel)', transform: isOpen ? 'rotate(45deg)' : 'none', transition: 'transform 0.3s' },
+      };
+    });
+    return {
+      sections,
+      jumpPolicies: (e) => { e.preventDefault(); const el = document.getElementById('policies'); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 130, behavior: 'smooth' }); },
+      policies: [
+        { title: 'PC Diagnostic', copy: '$25, waived when the recommended repair is completed.' },
+        { title: 'Parts', copy: 'Parts are not included unless specifically stated.' },
+        { title: 'Special-Order Parts', copy: 'Payment is required before parts are ordered.' },
+        { title: 'Website Projects', copy: '50% deposit to begin. 50% due before launch.' },
+        { title: 'Projects Over $2,000', copy: 'May use: 40% to begin, 30% at design approval, 30% before launch.' },
+        { title: 'AI / Custom Development', copy: '50% deposit to begin unless otherwise quoted.' },
+        { title: 'Custom Quotes', copy: 'Free for website, business IT, AI, and custom project consultations.' },
+        { title: 'Onsite Support', copy: 'One-hour minimum.' },
+        { title: 'Additional Work', copy: 'Any work beyond the approved scope or quote requires customer approval before proceeding.' },
+        { title: 'Third-Party Fees', copy: 'Domains, hosting, paid plugins, software subscriptions, AI/API usage, advertising spend, and other third-party services are billed separately unless specifically included in writing.' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
